@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
+  <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512" fill="purple"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 9.8 11.2 15.5 19.1 9.7L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"/></svg>
+</button>
+
+<!-- Modal-->
+<div id="myModal" class="modal fade" role="dialog">
+<form class="row g-3" action="https://formsubmit.co/e-clinic@maternityfirst.co.uk"
+method="POST">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="popupModalLabel">Contact Us</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="contact_form" name="contact_form" method="post">
+                    <div class="mb-5">
+                        <label for="email_addr">Email address</label>
+                        <input type="email" required maxlength="50" class="form-control" id="email_addr" name="email"
+                            placeholder="name@example.com">
+                    </div>
+                    <div class="mb-5">
+                        <label for="name_input">Name</label>
+                        <input type="text" required maxlength="50" class="form-control" id="name_input" name="name"
+                            placeholder="Name">
+                    </div>
+                    <div class="mb-5">
+                        <label for="phone_input">Phone</label>
+                        <input type="tel" required maxlength="50" class="form-control" id="phone_input" name="Phone"
+                            placeholder="Phone">
+                    </div>
+                    <div class="mb-5">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
