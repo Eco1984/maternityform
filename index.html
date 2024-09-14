@@ -11,21 +11,22 @@
 <body>
 
 <div class="container">
-<button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
-  <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512" fill="purple"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 9.8 11.2 15.5 19.1 9.7L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"/></svg>
+<button type="button" class="btn btn-link" id="myBtn2" data-toggle="modal">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20em" height="2em" viewBox="0 0 512 512" style="font-size: 25px" fill="purple"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 9.8 11.2 15.5 19.1 9.7L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"/></svg>
 </button>
 
 <!-- Modal-->
 <div id="myModal" class="modal fade" role="dialog">
 <form action="https://formsubmit.co/9ee7bdce22725cb65d7a1504c71da34b" method="POST" />
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="popupModalLabel">Contact Us</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
                 <form id="contact_form" name="contact_form" method="post">
+                <div class="container-fluid">
                     <div class="mb-5">
                         <label for="email_addr">Email address</label>
                         <input type="email" required maxlength="50" class="form-control" id="email_addr" name="email"
@@ -51,3 +52,11 @@
         </div>
     </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+  $("#myBtn2").click(function(){
+    $("#myModal").modal({backdrop: false});
+  });
+});
+</script>
