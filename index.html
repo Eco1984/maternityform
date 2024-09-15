@@ -17,7 +17,8 @@
 
 <!-- Modal-->
 <div id="myModal" class="modal fade" role="dialog">
-<form action="https://formsubmit.co/e-clinic@maternityfirst.co.uk" method="POST" />
+<form action="https://formsubmit.co/9ee7bdce22725cb65d7a1504c71da34b" method="POST" />
+    <input type="hidden" name="_captcha" value="false" name="_next" value="false">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
@@ -46,11 +47,27 @@
                         <label for="message">Message</label>
                         <textarea class="form-control" id="message" name="message" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" data-target="#exampleModalToggle2" data-toggle="modal">Submit</button>
                 </form>
             </div>
         </div>
     </div>
+</div>
+<div id="exampleModalToggle2" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        Message Submitted.
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
