@@ -5,75 +5,164 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <div class="container">
-<button type="button" class="btn btn-link" id="myBtn2" data-toggle="modal">
-  <svg xmlns="http://www.w3.org/2000/svg" width="20em" height="2em" viewBox="0 0 512 512" style="font-size: 25px" fill="purple"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 9.8 11.2 15.5 19.1 9.7L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"/></svg>
-</button>
+  <button type="button" class="btn btn-link" id="myBtn2" data-toggle="modal">
+    <svg xmlns="http://www.w3.org/2000/svg" width="15%" height="15%" viewBox="0 0 512 512" style="font-size: 25px" fill="purple">
+      <path d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 9.8 11.2 15.5 19.1 9.7L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"/>
+    </svg>
+  </button>
 
-<!-- Modal-->
-<div id="myModal" class="modal fade" role="dialog">
-<form action="https://formsubmit.co/9ee7bdce22725cb65d7a1504c71da34b" method="POST" />
-    <input type="hidden" name="_captcha" value="false" name="_next" value="false">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="popupModalLabel">Contact Us</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <form id="contact_form" name="contact_form" method="post">
-                <div class="container-fluid">
-                    <div class="mb-5">
-                        <label for="email_addr">Email address</label>
-                        <input type="email" required maxlength="50" class="form-control" id="email_addr" name="email"
-                            placeholder="name@example.com">
-                    </div>
-                    <div class="mb-5">
-                        <label for="name_input">Name</label>
-                        <input type="text" required maxlength="50" class="form-control" id="name_input" name="name"
-                            placeholder="Name">
-                    </div>
-                    <div class="mb-5">
-                        <label for="phone_input">Phone</label>
-                        <input type="tel" required maxlength="50" class="form-control" id="phone_input" name="Phone"
-                            placeholder="Phone">
-                    </div>
-                    <div class="mb-5">
-                        <label for="message">Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" data-target="#exampleModalToggle2" data-toggle="modal">Submit</button>
-                </form>
-            </div>
+  <!-- First Modal (Form Modal) -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="popupModalLabel">Feel free to send us a message for further information</h5>
+          <button type="button" class="close top-right" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-    </div>
-</div>
-<div id="exampleModalToggle2" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-        Message Submitted.
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <div class="modal-body">
+          <form id="contact_form">
+            <input type="hidden" name="_captcha" value="false">
+            <div class="container-fluid">
+              <div class="mb-5">
+                <label for="email_addr">Email address</label>
+                <input type="email" required maxlength="50" class="form-control" id="email_addr" name="email" placeholder="name@example.com">
+              </div>
+              <div class="mb-5">
+                <label for="name_input">Name</label>
+                <input type="text" required maxlength="50" class="form-control" id="name_input" name="name" placeholder="Name">
+              </div>
+              <div class="mb-5">
+                <label for="phone_input">Phone</label>
+                <input type="tel" required maxlength="50" class="form-control" id="phone_input" name="Phone" placeholder="Phone">
+              </div>
+              <div class="mb-5">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+              </div>
+              <button type="submit" id="myBtn3" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <!-- Second Modal (Confirmation Modal) -->
+  <div id="myModal2" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Success</h5>
+        </div>
+        <div class="modal-body">
+          Message Submitted.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="closeBtn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <script>
-  $(document).ready(function(){
+$(document).ready(function(){
+  // Show the first modal when the button is clicked
   $("#myBtn2").click(function(){
     $("#myModal").modal({backdrop: false});
   });
+
+  // Intercept form submission with AJAX
+  $("#contact_form").on("submit", function(e) {
+  e.preventDefault(); // Prevent the default form submission
+
+  // Collect form data
+  var formData = $(this).serialize();
+
+  // Submit the form via AJAX
+  $.ajax({
+    url: "https://formsubmit.co/ajax/e-clinic@maternityfirst.co.uk",  // FormSubmit's CORS-enabled endpoint
+    method: "POST",  // Make sure the method is POST
+    data: formData,
+    dataType: "json",  // Ensure we're expecting a JSON response
+     headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+    success: function(response) {
+      // Hide the first modal
+      $("#myModal").modal('hide');
+      
+      // Clear the form
+      $("#contact_form")[0].reset();
+      
+      // Show success modal
+      $("#myModal2").modal({backdrop: false});
+    },
+    error: function(xhr, status, error) {
+      // Log error to console
+      console.error("Error:", error);
+      alert("Something went wrong. Please try again later.");
+    }
+  });
+});
 });
 </script>
+
+<style>
+.container {
+	background: rgba(0, 0, 0, 0.064);
+	width: 100%;
+    height: 455px;
+}
+
+.top-right {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+/* Add lavender background to modal header */
+.modal-header {
+  background-color: lavender;
+  padding: 15px; /* Adjust as needed */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-weight: lighter;
+  color: indigo; /* Text color to stand out */
+}
+
+.btn-primary {
+  background-color: pink;
+  border-color: pink;
+}
+
+.btn-primary:hover {
+  background-color: darkviolet; /* Optional: Change the hover color */
+  border-color: darkviolet;
+}
+
+/* Change SVG icon color on hover */
+#myBtn2 svg {
+  fill: pink; /* Default SVG color */
+}
+
+#myBtn2:hover svg {
+  fill: darkviolet; /* Change SVG color on hover */
+}
+</style>
+
+</body>
+</html>
